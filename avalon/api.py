@@ -17,6 +17,7 @@ from .pipeline import (
 
     Loader,
     Creator,
+
     discover,
     session,
 
@@ -43,10 +44,10 @@ __all__ = [
     "install",
     "uninstall",
 
-    "schema",
-
     "Loader",
     "Creator",
+
+    "schema",
     "discover",
     "session",
 

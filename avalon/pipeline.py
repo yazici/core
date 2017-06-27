@@ -142,7 +142,16 @@ def is_installed():
 
 @lib.log
 class Loader(list):
-    """Load representation into host application
+    """Superclass to all Loader plug-ins
+
+    Load representation into host application
+
+    Attributes:
+        families (list): Supported families
+        representations (list): Supported representations
+        order (int, optional): Order of visual appearance
+        label (str, optional): Nice name of Loader
+        icon (str, optional): Name of Font Awesome icon, e.g. "gear"
 
     Arguments:
         context (dict): avalon-core:context-1.0
@@ -182,7 +191,26 @@ class Loader(list):
 
 @lib.log
 class Creator(object):
-    """Determine how assets are created"""
+    """Superclass to all Creator plug-ins
+
+    Create instance in host application
+
+    Attributes:
+        name (str): Default name of newly created subset
+        family (str): Family of newly created instance
+        label (str, optional): Nice name of Creator
+        icon (str, optional): Name of Font Awesome icon, e.g. "gear"
+
+    Arguments:
+        name (str): Name given to the instance in the host application
+        asset (str): Name of the source asset
+        options (dict, optional): Options passed from host-independent a
+            GUI to host
+        data (dict, optional): Additional data injected into the resulting
+            instance from a GUI.
+
+    """
+
     name = None
     label = None
     family = None
